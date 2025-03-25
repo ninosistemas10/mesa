@@ -37,7 +37,7 @@ class CategoryState extends Equatable {
       add: add ?? this.add,
       removed:  removed ?? this.removed,
       isUpdated: isUpdated ?? this.isUpdated,
-      listPromotion: listCategory ?? this.listPromotion,
+      listPromotion: listCategory ?? listPromotion,
       imageUpdateStatus: imageUpdateStatus ?? this.imageUpdateStatus,
     );
   }

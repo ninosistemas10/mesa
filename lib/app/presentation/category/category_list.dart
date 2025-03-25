@@ -10,7 +10,7 @@ import 'package:mesa_bloc/app/presentation/category/category_edit.dart';
 import 'package:mesa_bloc/app/presentation/category/category_add.dart';
 import 'package:mesa_bloc/app/presentation/category/category_delete.dart';
 import 'package:mesa_bloc/app/utils/app_colors.dart';
-import 'package:mesa_bloc/app/utils/constants.dart';
+
 
 class CategoryList extends StatefulWidget {
   final Function(String, {String? categoryId}) updatePage;
@@ -379,10 +379,13 @@ class _CategoryListState extends State<CategoryList> {
   String _fixImageUrl(String? url) {
     if (url == null || url.isEmpty) return '';
     if (url.contains("localhost")) {
-      return url.replaceAll("localhost", Constants.localhost);
+      return url;
+      //return url.replaceAll("localhost", Constants.localhost);
     }
     if (!url.startsWith("http")) {
-      return "http://${Constants.localhost}:8081/$url";
+      //return "http://${Constants.localhost}:8081/$url";
+      return "http://localhost:8081/$url";
+
     }
     return url;
   }
